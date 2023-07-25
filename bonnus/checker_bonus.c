@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:13:22 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/19 05:14:29 by abmisk           ###   ########.fr       */
+/*   Updated: 2023/07/25 00:53:38 by abmisk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,18 @@ int	ft_err(void)
 	return (0);
 }
 
-void	check_to_b_push(t_stack **a, t_stack **b)
+void	check_to_push(t_stack **a, t_stack **b, char *par)
 {
-	if (ft_lstsize(*b) > 0)
-		ft_push(b, a, "");
+	if (ft_strcmp(par, "pa\n"))
+	{
+		if (ft_lstsize(*b) > 0)
+			ft_push(b, a, "");
+	}
+	else
+	{
+		if (ft_lstsize(*a) > 0)
+			ft_push(a, b, "");
+	}
 }
 
 int	ft_do_input(t_stack **a, t_stack **b, char *line)
@@ -40,9 +48,9 @@ int	ft_do_input(t_stack **a, t_stack **b, char *line)
 	else if (ft_strcmp(line, "rrb\n"))
 		ft_rrotate(b, "");
 	else if (ft_strcmp(line, "pa\n"))
-		check_to_b_push(a, b);
+		check_to_push(a, b, "pa\n");
 	else if (ft_strcmp(line, "pb\n"))
-		ft_push(a, b, "");
+		check_to_push(a, b, "pb\n");
 	else if (ft_strcmp(line, "rrr\n"))
 		rrr(a, b);
 	else if (ft_strcmp(line, "rr\n"))

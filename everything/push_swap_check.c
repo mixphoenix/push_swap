@@ -6,7 +6,7 @@
 /*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:28:18 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/19 05:27:53 by abmisk           ###   ########.fr       */
+/*   Updated: 2023/07/25 07:33:12 by abmisk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ void	ft_sort_b_a(t_stack **a, t_stack **b, t_var *all)
 		else
 		{
 			if (get_indx(*b, all->s[all->indx] < ft_lstsize(*b) / 2))
-				ft_rrotate(b, "rrb\n");
-			else
 				ft_rotate(b, "rb\n");
+			else
+				ft_rrotate(b, "rrb\n");
 		}
 	}
 }

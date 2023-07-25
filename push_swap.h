@@ -6,7 +6,7 @@
 /*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 01:53:21 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/19 05:28:42 by abmisk           ###   ########.fr       */
+/*   Updated: 2023/07/25 00:41:59 by abmisk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	rrr(t_stack **a, t_stack **b);
 void	rr(t_stack **a, t_stack **b);
 int		ft_err(void);
 int		ft_check_if_stack_sorted(t_stack *a);
-void	check_to_b_push(t_stack **a, t_stack **b);
+void	check_to_push(t_stack **a, t_stack **b, char *par);
 int		ft_check_max_int(char **av, int i);
 
 #endif
