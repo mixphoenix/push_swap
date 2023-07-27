@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 01:53:21 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/27 12:23:37 by mac              ###   ########.fr       */
+/*   Updated: 2023/07/27 14:32:15 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,5 +103,7 @@ char    *ft_strchr(const char *s, int c);
 void print_stack(t_stack *a);
 t_stack *stack_create(int ac, t_stack *a, char **av);
 void ft_str_free(char **str);
+void	*ft_calloc(size_t count, size_t size);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif

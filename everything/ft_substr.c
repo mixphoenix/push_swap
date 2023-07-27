@@ -56,3 +56,33 @@ void ft_str_free(char **str)
 	}
 	free(str);
 }
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	char	*p;
+	size_t	x;
+
+	if (size && (count > SIZE_MAX / size))
+		return (NULL);
+	x = count * size;
+	p = (void *)malloc(count * size);
+	if (!p)
+		return (NULL);
+	return (ft_memset(p, 0, x));
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+	unsigned char	*r;
+
+	i = 0;
+	r = (unsigned char *)b;
+	while (i < len)
+	{
+		r[i] = (unsigned char)c;
+		i++;
+	}
+	b = r;
+	return (b);
+}

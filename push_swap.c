@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:40:41 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/27 12:24:53 by mac              ###   ########.fr       */
+/*   Updated: 2023/07/27 14:41:28 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int	main(int ac, char **av)
 		if (ft_check_args2(av))
 			ft_error();
 		a = stack_create(ac, a, av);
+		//system("leaks push_swap");
 		//print_stack(a);
 		if (check_duplicate(a))
 			ft_error();

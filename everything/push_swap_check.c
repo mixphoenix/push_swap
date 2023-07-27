@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:28:18 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/25 07:33:12 by abmisk           ###   ########.fr       */
+/*   Updated: 2023/07/27 16:16:43 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_sort_b_a(t_stack **a, t_stack **b, t_var *all)
 		}
 		else
 		{
-			if (get_indx(*b, all->s[all->indx] < ft_lstsize(*b) / 2))
+			if (get_indx(*b, all->s[all->indx]) < (ft_lstsize(*b) / 2))
 				ft_rotate(b, "rb\n");
 			else
 				ft_rrotate(b, "rrb\n");

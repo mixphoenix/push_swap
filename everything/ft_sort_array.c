@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/11 20:39:34 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/19 05:27:53 by abmisk           ###   ########.fr       */
+/*   Updated: 2023/07/27 16:12:09 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	get_indx(t_stack *a, int n)
 	indx = 0;
 	while (a)
 	{
-		if (a->content == n && a->content > 0)
+		if (a->content == n)
 			return (indx);
 		a = a->next;
 		indx++;
