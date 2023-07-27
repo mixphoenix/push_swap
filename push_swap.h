@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 01:53:21 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/25 00:41:59 by abmisk           ###   ########.fr       */
+/*   Updated: 2023/07/27 12:23:37 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,14 @@ int		ft_err(void);
 int		ft_check_if_stack_sorted(t_stack *a);
 void	check_to_push(t_stack **a, t_stack **b, char *par);
 int		ft_check_max_int(char **av, int i);
+int    isprint(int c);
+char *ft_strjoin(char const *s1, char const *s2);
+char    **ft_split(char const *s, char c);
+char *ft_substr(char const *s, unsigned int start, size_t len);
+size_t  ft_strlen(const char *s);
+char    *ft_strchr(const char *s, int c);
+void print_stack(t_stack *a);
+t_stack *stack_create(int ac, t_stack *a, char **av);
+void ft_str_free(char **str);
 
 #endif

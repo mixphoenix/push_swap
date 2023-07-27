@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:40:41 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/25 00:26:23 by abmisk           ###   ########.fr       */
+/*   Updated: 2023/07/27 12:24:53 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,49 @@ void	ft_inisialize(t_stack **a, t_stack **b, int *i)
 	*b = NULL;
 }
 
+void print_stack(t_stack *a)
+{
+	while (a)
+	{
+		printf("%d ", a->content);
+		a = a->next;
+	}
+	printf("\n");
+}
+
+t_stack *stack_create(int ac, t_stack *a, char **av)
+{
+	int num;
+	int i;
+	int j;
+	char **str;
+	
+	num = 0;
+	i = 1;
+	while (i < ac)
+	{
+		if(ft_strchr(av[i], ' '))
+		{
+			str = ft_split(av[i], ' ');
+			j = 0;
+			while(str[j])
+			{
+				num = ft_atoi(str[j]);
+				ft_lstadd_back(&a, ft_lstnew(num));
+				j++;
+			}
+			ft_str_free(str);
+		}
+		else
+		{
+			num = ft_atoi(av[i]);
+			ft_lstadd_back(&a, ft_lstnew(num));
+		}
+		i++;
+	}
+	return (a);
+}
+
 int	main(int ac, char **av)
 {
 	int		i;
@@ -36,11 +79,8 @@ int	main(int ac, char **av)
 	{
 		if (ft_check_args2(av))
 			ft_error();
-		while (i < ac)
-		{
-			ft_lstadd_back(&a, ft_lstnew(ft_atoi(av[i])));
-			i++;
-		}
+		a = stack_create(ac, a, av);
+		//print_stack(a);
 		if (check_duplicate(a))
 			ft_error();
 		if (check_if_num_are_sorted(a))
