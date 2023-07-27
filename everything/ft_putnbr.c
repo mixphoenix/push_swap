@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 20:21:55 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/11 20:21:56 by abmisk           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <unistd.h>
 #include "../push_swap.h"
 
@@ -68,7 +56,7 @@ int	ft_putunbr(unsigned int nb)
 		c += ft_putunbr(nb / 10);
 		c += ft_putunbr(nb % 10);
 	}
-	else if ((nb >= 0) && (nb <= 9))
+	else if (nb <= 9)
 		c += ft_putchar(nb + '0');
 	return (c);
 }

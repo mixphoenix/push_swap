@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap_operations.c                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 05:30:44 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/15 05:32:23 by abmisk           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../push_swap.h"
 
 void	ft_swap(t_stack **a, char *p)
@@ -45,9 +33,7 @@ void	ft_rrotate(t_stack **a, char *p)
 {
 	t_stack	*node;
 	t_stack	*node1;
-	int		i;
 
-	i = 0;
 	node = NULL;
 	node1 = NULL;
 	node = *a;

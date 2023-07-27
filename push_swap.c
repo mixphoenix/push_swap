@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 05:40:41 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/27 14:41:28 by mac              ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 void	ft_error(void)
@@ -41,28 +29,22 @@ t_stack *stack_create(int ac, t_stack *a, char **av)
 	int i;
 	int j;
 	char **str;
-	
+
 	num = 0;
 	i = 1;
 	while (i < ac)
 	{
-		if(ft_strchr(av[i], ' '))
+		str = ft_split(av[i], ' ');
+		if (!str[0])
+			ft_error();
+		j = 0;
+		while(str[j])
 		{
-			str = ft_split(av[i], ' ');
-			j = 0;
-			while(str[j])
-			{
-				num = ft_atoi(str[j]);
-				ft_lstadd_back(&a, ft_lstnew(num));
-				j++;
-			}
-			ft_str_free(str);
-		}
-		else
-		{
-			num = ft_atoi(av[i]);
+			num = ft_atoi(str[j]);
 			ft_lstadd_back(&a, ft_lstnew(num));
+			j++;
 		}
+		ft_str_free(str);
 		i++;
 	}
 	return (a);
@@ -85,7 +67,10 @@ int	main(int ac, char **av)
 		if (check_duplicate(a))
 			ft_error();
 		if (check_if_num_are_sorted(a))
+		{
+			ft_free_stack(&a);
 			return (0);
+		}
 		if (ft_lstsize(a) <= 15)
 			ft_sort_15_num(&a, &b);
 		else

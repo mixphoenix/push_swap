@@ -11,7 +11,7 @@ OBJCTB	=	${all:.c=.o}
 
 RM		=	rm -f
 
-CC		=	gcc -Wall -Wextra -Werror 
+CC		=	gcc -Wall -Wextra -Werror -g -fsanitize=address
 
 all : $(NAME)
 

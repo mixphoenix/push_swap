@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_sort_algo.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 20:31:01 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/25 04:43:48 by abmisk           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../push_swap.h"
 
 int	ft_bottom(t_stack *a)
@@ -32,7 +20,6 @@ void	ft_get_update(t_var *all)
 t_var	*ft_push_a_b(t_stack **a, t_stack **b)
 {
 	t_var	*all;
-	int		in;
 
 	all = ft_get_var(*a);
 	while (ft_lstsize(*a))
@@ -40,7 +27,6 @@ t_var	*ft_push_a_b(t_stack **a, t_stack **b)
 		ft_get_update(all);
 		while (ft_lstsize(*b) != (all->end - all->start + 1))
 		{
-			in = (*a)->content;
 			if ((*a)->content >= all->s[all->start]
 				&& (*a)->content <= all->s[all->end])
 			{

@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   checker_bonus.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/15 05:13:22 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/25 00:53:38 by abmisk           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../push_swap.h"
 #include "get_next_line.h"
 
@@ -66,7 +54,7 @@ void	checker(t_stack **a, t_stack **b)
 	int		x;
 
 	line = get_next_line(0);
-	while (line > 0)
+	while (line)
 	{
 		x = ft_do_input(a, b, line);
 		if (x == 0)
@@ -90,6 +78,8 @@ int	main(int ac, char **av)
 	t_stack	*b;
 
 	i = 1;
+	a = NULL;
+	b = NULL;
 	if (ac > 1)
 	{
 		if (ft_check_args2(av))
@@ -101,10 +91,9 @@ int	main(int ac, char **av)
 		}
 		if (check_duplicate(a))
 			ft_error();
-		if (check_if_num_are_sorted(a))
-			return (ft_printf("u have a sequence of sorted numbers.\n"));
 		checker(&a, &b);
 	}
 	ft_free_stack(&a);
+	ft_free_stack(&b);
 	return (0);
 }

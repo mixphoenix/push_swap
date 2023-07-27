@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_hex.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/11 20:17:10 by abmisk            #+#    #+#             */
-/*   Updated: 2023/07/19 03:57:33 by abmisk           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <unistd.h>
 #include "../push_swap.h"
 
@@ -62,10 +50,10 @@ long int	ft_atoi(const char *str)
 	i = 0;
 	s = 1;
 	res = 0;
-	while (str[i] <= 32)
+	while (str[i] <= 32 && str[i])
 		i++;
 	while (str[i] != '\0' && (str[i] == '-' || str[i] == '+'))
-	{	
+	{
 		if (str[i] == '-')
 			s *= -1;
 		i++;
@@ -73,6 +61,9 @@ long int	ft_atoi(const char *str)
 	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
 	{
 		res = res * 10 + str[i] - '0';
+		if ((((res - 1) > INT_MAX) && s == -1) \
+			|| ((res > INT_MAX) && s == 1))
+			ft_error();
 		i++;
 	}
 	return (res * s);
