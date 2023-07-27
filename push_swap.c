@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/27 21:12:11 by abmisk            #+#    #+#             */
+/*   Updated: 2023/07/27 21:27:47 by abmisk           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_error(void)
@@ -13,7 +25,7 @@ void	ft_inisialize(t_stack **a, t_stack **b, int *i)
 	*b = NULL;
 }
 
-void print_stack(t_stack *a)
+void	print_stack(t_stack *a)
 {
 	while (a)
 	{
@@ -23,12 +35,12 @@ void print_stack(t_stack *a)
 	printf("\n");
 }
 
-t_stack *stack_create(int ac, t_stack *a, char **av)
+t_stack	*stack_create(int ac, t_stack *a, char **av)
 {
-	int num;
-	int i;
-	int j;
-	char **str;
+	int		num;
+	int		i;
+	int		j;
+	char	**str;
 
 	num = 0;
 	i = 1;
@@ -38,7 +50,7 @@ t_stack *stack_create(int ac, t_stack *a, char **av)
 		if (!str[0])
 			ft_error();
 		j = 0;
-		while(str[j])
+		while (str[j])
 		{
 			num = ft_atoi(str[j]);
 			ft_lstadd_back(&a, ft_lstnew(num));
@@ -62,8 +74,6 @@ int	main(int ac, char **av)
 		if (ft_check_args2(av))
 			ft_error();
 		a = stack_create(ac, a, av);
-		//system("leaks push_swap");
-		//print_stack(a);
 		if (check_duplicate(a))
 			ft_error();
 		if (check_if_num_are_sorted(a))

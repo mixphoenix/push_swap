@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abmisk <abmisk@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/27 21:11:39 by abmisk            #+#    #+#             */
+/*   Updated: 2023/07/27 21:19:04 by abmisk           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include "../push_swap.h"
 
@@ -59,4 +71,20 @@ int	ft_putunbr(unsigned int nb)
 	else if (nb <= 9)
 		c += ft_putchar(nb + '0');
 	return (c);
+}
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+	unsigned char	*r;
+
+	i = 0;
+	r = (unsigned char *)b;
+	while (i < len)
+	{
+		r[i] = (unsigned char)c;
+		i++;
+	}
+	b = r;
+	return (b);
 }
